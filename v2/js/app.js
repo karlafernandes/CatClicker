@@ -23,8 +23,6 @@ for (var i = 0; i < cats.length; i++) {
         };
     })(cat));
 
-$( "p" ).click();
-
 	// finally, let's add this element to the document
     document.body.appendChild(elem);
 };
