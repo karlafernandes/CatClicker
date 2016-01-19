@@ -128,7 +128,8 @@ var catListView = {
                     controller.setCurrentCat(catCopy);
                     catView.render();
 		
-					for (i = 0; i < model.cats.length; i++) {
+					cats = controller.getCats();
+					for (i = 0; i < cats.length; i++) {
 						var catElem = document.getElementById(model.cats[i].name);
 						catElem.classList.remove('active');
 					}
