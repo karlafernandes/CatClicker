@@ -21,11 +21,8 @@ var ViewModel = function(){
     }, this);	
 
  
-    this.nickname = ko.observableArray([
-        { nickname: 'Brown' },
-        { nickname: 'KaffeMilch' },
-        { nickname: 'Blau' }
-    ]);
+    this.nickname = ko.observableArray(['Brown', 'KaffeMilch', 'Blau']);
+
 }
 
 ko.applyBindings(new ViewModel());
