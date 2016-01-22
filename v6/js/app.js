@@ -71,13 +71,8 @@ var ViewModel = function(){
 		//console.log(catButton);
 		//console.log(oldButton);
 		
-		if (oldButton == undefined) {			
-			self.addClass(catButton);
-		} else {
-			self.removeClasse(oldButton);
-			self.addClass(catButton);		
-		}
-				
+		self.removeClasse(oldButton);
+		self.addClass(catButton);
 		self.currentCat(catNow);
 	};	
 	
