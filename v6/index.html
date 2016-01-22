@@ -22,6 +22,11 @@
 					<img data-bind="click : incrementCounter, attr : {src : imgSrc, alt : name, title : name}"
 						src="" alt="" title="" class="img-responsive img-circle center-block">
 					<h3 class="text-center"><span data-bind="text : clickCount">0</span> times! YEY!</h3>
+					<br /><br />
+					<h4>Nicknames</h4>
+					<ul data-bind="foreach: nickname">
+					    <li data-bind="text: nickname"></li>
+					</ul>
 				</div>				
 			</div>			
 		</div>       
