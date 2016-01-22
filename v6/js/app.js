@@ -1,14 +1,8 @@
-var ViewModel = function(){
+var Cat = function(){
 	this.clickCount = ko.observable(0);
 	this.name = "Fluffy";
 	this.imgSrc = "images/fluffy.jpg";
 	this.imgAttribution = "Karlinha";
-	
-	this.incrementCounter = function() {
-		this.clickCount(this.clickCount() + 1);
-		
-		
-	};
 	
 	this.level = ko.computed(function() {
         if (this.clickCount() < 20) {
@@ -19,10 +13,16 @@ var ViewModel = function(){
             return "Adult";
         }
     }, this);	
-
  
     this.nickname = ko.observableArray(['Brown', 'KaffeMilch', 'Blau']);
+}
 
+var ViewModel = function(){	
+	this.currentCat = ko.observable( new Cat() );
+	
+	this.incrementCounter = function() {
+		this.currentCat().clickCount(this.currentCat().clickCount() + 1);
+	};
 }
 
 ko.applyBindings(new ViewModel());
