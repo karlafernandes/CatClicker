@@ -12,16 +12,23 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center text-uppercase">Cat Clicker</h1>
-					<div id="buttons" class="text-center"></div>
-				</div>				
+					<div id="buttons" class="text-center" data-bind="foreach: catList">
+						<!-- ko if: ($index() === 0) -->
+							<button type="button" class="btn btn-default btn-lg active" data-bind="click: $parent.changeCat, attr: {id: name, name: 'active'}, text: name"></button>
+						<!-- /ko -->
+					    <!-- ko if: ($index() > 0) -->
+							<button type="button" class="btn btn-default btn-lg" data-bind="click: $parent.changeCat, attr: {id: name, name: 'inactive'}, text: name"></button>
+						<!-- /ko -->
+					</div>	
+				</div>			
 			</div>			
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3" id="cat" data-bind="with: currentCat">
-					<h2 data-bind="text : name" class="text-center">Cat Name</h1>
-					<h4 data-bind="text : level" class="text-center">Cat Level</h4>						
-					<img data-bind="click : $parent.incrementCounter, attr : {src : imgSrc, alt : name, title : name}"
+					<h2 data-bind="text: name" class="text-center">Cat Name</h1>
+					<h4 data-bind="text: level" class="text-center">Cat Level</h4>						
+					<img data-bind="click: $parent.incrementCounter, attr: {src: imgSrc, alt: name, title: name}"
 						src="" alt="" title="" class="img-responsive img-circle center-block">
-					<h3 class="text-center"><span data-bind="text : clickCount">0</span> times! YEY!</h3>
+					<h3 class="text-center"><span data-bind="text: clickCount">0</span> times! YEY!</h3>
 					<br /><br />
 					<h4>Nicknames</h4>
 					<ul data-bind="foreach: nicknames">
